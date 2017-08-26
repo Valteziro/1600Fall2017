@@ -1,14 +1,14 @@
 Steam Statistics By Most Played
 
-385,854	816,983	 	Dota 2
-267,232	774,342	 	PLAYERUNKNOWN'S BATTLEGROUNDS
-265,187	537,578	 	Counter-Strike: Global Offensive
-58,161	62,214	 	Team Fortress 2
-47,355	96,192	 	Grand Theft Auto V
-43,634	61,022	 	Path of Exile
-39,462	61,431	 	Tom Clancy's Rainbow Six Siege
+390,168	816,983	 	Dota 2
+271,138	774,342	 	PLAYERUNKNOWN'S BATTLEGROUNDS
+262,675	537,578	 	Counter-Strike: Global Offensive
+58,337	62,214	 	Team Fortress 2
+45,928	96,192	 	Grand Theft Auto V
+43,214	61,022	 	Path of Exile
+39,885	61,431	 	Tom Clancy's Rainbow Six Siege
 39,138	60,552	 	PAYDAY 2
-36,499	55,782	 	Warframe
-31,838	44,159	 	Garry's Mod
+36,623	55,782	 	Warframe
+31,716	44,159	 	Garry's Mod
 
-7:25 PM 8/25/2017
+7:30 PM 8/25/2017
