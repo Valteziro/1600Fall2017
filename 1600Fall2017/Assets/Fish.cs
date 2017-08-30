@@ -8,6 +8,8 @@ public class Fish : Animal {
         base.Start();
         Swim();
     }
+
+    //This makes fish swim
     void Swim() {
 
         print(this.name + " swims");

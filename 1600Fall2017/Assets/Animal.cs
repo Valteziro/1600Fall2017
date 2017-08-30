@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//This script affects all others
 public class Animal : MonoBehaviour {
 
 	// Use this for initialization

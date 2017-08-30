@@ -10,6 +10,7 @@ public class Bird : Animal {
         Fly();
     }
 
+    //This makes birds fly
     void Fly ()
     {
         print(this.name + " flies");
