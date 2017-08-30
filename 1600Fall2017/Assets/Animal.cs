@@ -5,17 +5,30 @@ using UnityEngine;
 public class Animal : MonoBehaviour {
 
 	// Use this for initialization
-	void Start () {
-		Die();
+	public virtual void Start ()
+    {	
+		die();
+		eat();
+		sleep();    
+	}
+    
+    //This makes stuff die
+	void die ()
+    {
+		print(this.name + " dies");	
 	}
 
-	void Die () {
-		print(this.name + "Dies");
-	
+    //This makes stuff eat
+	void eat ()
+    {
+		print(this.name + " eats");		
 	}
 
-	// Update is called once per frame
-	void Update () {
-		
+    //This makes stuff sleep
+	void sleep ()
+    {
+		print(this.name + " sleeps");
 	}
+
 }
+
