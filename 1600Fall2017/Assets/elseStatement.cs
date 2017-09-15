@@ -3,14 +3,6 @@ using UnityEngine.UI;
 
 public class ifStatement : MonoBehaviour
 {
-<<<<<<< HEAD
-    public bool canPlayGame = false;
-
-    public Text input;
-    public string password = "G@m3Pl@y";
-    public Toggle toggle;
-    // Use this for initialization
-=======
 
     public int num1;
     public int num2;
@@ -24,20 +16,14 @@ public class ifStatement : MonoBehaviour
     public Text input;
     private string password = "G@m3Pl@y";
 
->>>>>>> master
     void Update()
     
     {
-        if (input.text == password)
+        if (num1 + num2 == value)
         {
-            print("You know the password");
-            canPlayGame = true;
+            print(value);
         }
         else
-<<<<<<< HEAD
-        {
-            print("the password is incorrect.");
-=======
         {
             print("That's Wrong.")
         }
@@ -67,23 +53,11 @@ public class ifStatement : MonoBehaviour
         else
         {
             print("Can't Play.")
->>>>>>> master
         }
-        if(canPlayGame)
+
+        if (input.text == password)
         {
-            print("Playing Game");
-        }
-        else
-        {
-            print("Can't play yet, enter a correct password.");
-        }
-        if (toggle.IsOn);
-        {
-            print("Playing Game");
-        }
-        else 
-        {
-            print("Game Cannot Be Played.");
+            print("You know the password");
         }
         else
         {
