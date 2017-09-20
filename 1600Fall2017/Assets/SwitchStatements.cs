@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponsSwitch : MonoBehaviour {
+public class SwitchStatements : MonoBehaviour {
     public string[] weapons;
     public void MyWeaponSwitch (int i)
     {
