@@ -1,11 +1,6 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-guid: 1ca9d28bb00ce8544870277ed1725a59
-timeCreated: 1505323159
-=======
-guid: c9a49aa358c734d40af0f0f9a064a2bc
-timeCreated: 1505323096
->>>>>>> CharacterScene
+guid: b09dfe98bb432f74cb2264ac577d594c
+timeCreated: 1506532929
 licenseType: Pro
 MonoImporter:
   serializedVersion: 2
