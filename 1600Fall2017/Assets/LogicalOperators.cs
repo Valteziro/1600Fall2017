@@ -28,17 +28,29 @@ public class LogicalOperators : MonoBehaviour
 
 		if (IsTrue && IsFalse)
 		{
+<<<<<<< HEAD
 			print("Condition 4 is False.");
+=======
+			print("Condition 1 is False.");
+>>>>>>> master
 		}
 
 		if (IsTrue || IsFalse)
 		{
+<<<<<<< HEAD
 			print("Condition 5 is True.");
+=======
+			print("Condition 2 is True.");
+>>>>>>> master
 		}
 
 		if (!(IsTrue && IsFalse))
 		{
+<<<<<<< HEAD
 			print("Condition 6 is True.");
+=======
+			print("Condition 3 is True.");
+>>>>>>> master
 		}
 
 		bool Sierra = true;
@@ -46,17 +58,29 @@ public class LogicalOperators : MonoBehaviour
 
 		if (Sierra && Gumbo)
 		{
+<<<<<<< HEAD
 			print("Condition 7 is False.");
+=======
+			print("Condition 1 is False.");
+>>>>>>> master
 		}
 
 		if (Sierra || Gumbo)
 		{
+<<<<<<< HEAD
 			print("Condition 8 is True.");
+=======
+			print("Condition 2 is True.");
+>>>>>>> master
 		}
 
 		if (!(Sierra && Gumbo))
 		{
+<<<<<<< HEAD
 			print("Condition 9 is True.");
+=======
+			print("Condition 3 is True.");
+>>>>>>> master
 		}
 
 		bool IsAlwaysTrue = true;
@@ -64,7 +88,11 @@ public class LogicalOperators : MonoBehaviour
 
 		if (!(IsAlwaysTrue && IsAlsoAlwaysTrue))
 		{
+<<<<<<< HEAD
 			print("Condition 10 is False.");
+=======
+			print("Condition 3 is False.");
+>>>>>>> master
 		}
 	}
 }
