@@ -54,8 +54,8 @@ public class Void : MonoBehaviour {
 	{
 		print(this.name + " picks up the weapon.");
 	}
-	void ThrowGrenade()
-	{
-		print(this.name + " throws a grenade.");
-	}
+    void ThrowGrenade()
+    {
+        print(this.name + " throws a grenade.");
+    }
 }
