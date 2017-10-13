@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MathFunctions : MonoBehaviour {
-
+public class MathFunctions : MonoBehaviour
+{
     public int MyScore = 100;
     public int Health;
     public int Ammo;
@@ -30,7 +30,5 @@ public class MathFunctions : MonoBehaviour {
         {
             return "Incorrect";
         }
-    }
-
-    int 
+    } 
 }
