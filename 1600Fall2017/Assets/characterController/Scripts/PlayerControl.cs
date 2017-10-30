@@ -6,27 +6,23 @@ public class PlayerControl : MonoBehaviour
 {
 
     public CharacterController characterController;
-    public float gravity = 9.8f;
+    public static bool gameOver = false;
+    public float gravity = 9.81f;
     public float speed = 10;
     public Vector3 moveVector3;
-    public float jumpForce = 100; 
-	// Use this for initialization
-	void Start () {
-		
-	}
-
-    // Update is called once per frame
-    void FixedUpdate()
+    public float jumpForce = 20;
+    void Update()
     {
         moveVector3.y -= gravity * Time.deltaTime;
-        if (characterController.isGrounded)
+        if (characterController.isGrounded && !gameOver)
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 moveVector3.y = jumpForce * Time.deltaTime;
-            } 
+            }
             moveVector3.x = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
         }
         characterController.Move(moveVector3);
-	}
+    }
 }
+

@@ -6,50 +6,66 @@ using UnityEngine.UI;
 public class UIHealth : MonoBehaviour
 {
     public Image bar;
-    public float barTime = 0.1f;
-    public float PowerLevel = 0.1f;
-    public float IncrementUp = 0.01f;
-
+    public GameObject gameOverUI;
+    public float powerLevel = 0.1f;
+    public float amountToAdd = 0.01f;
     public enum PowerUpType
     {
         PowerUp,
         PowerDown
     }
-    public PowerUpType PowerUp;
 
-    void OnTriggerEnter ()
+    public PowerUpType powerUp;
+
+    void OnTriggerEnter()
     {
-        switch (PowerUp)
+
+        switch (powerUp)
         {
             case PowerUpType.PowerUp:
                 StartCoroutine(PowerUpBar());
-            break;
+                break;
 
             case PowerUpType.PowerDown:
                 StartCoroutine(PowerDownBar());
                 break;
         }
-	}
+    }
 
     IEnumerator PowerUpBar()
     {
-        while (PowerLevel < 1)
+        float tempAmount = bar.fillAmount + powerLevel;
+        if (tempAmount > 1)
         {
-            bar.fillAmount += IncrementUp;
-            yield return new WaitForSeconds(barTime);
+            tempAmount = 1;
+        }
+
+        while (bar.fillAmount < tempAmount)
+        {
+            bar.fillAmount += amountToAdd;
+            yield return new WaitForSeconds(amountToAdd);
         }
     }
 
     IEnumerator PowerDownBar()
     {
-        float TempAmount = PowerLevel;
-        float FillAmount = bar.fillAmount;
-        while (PowerLevel > 0)
+        float tempAmount = bar.fillAmount - powerLevel;
+        if (tempAmount < 0)
         {
-            TempAmount -= IncrementUp;
-            //FillAmount = TempAmount - IncrementUp;
-            bar.fillAmount -= TempAmount;
-            yield return new WaitForSeconds(barTime);
+            tempAmount = 0;
+        }
+
+        while (bar.fillAmount > tempAmount)
+        {
+            bar.fillAmount -= amountToAdd;
+            yield return new WaitForSeconds(amountToAdd);
+
+        }
+
+        if (bar.fillAmount == 0)
+        {
+            gameOverUI.SetActive(true);
+            PlayerControl.gameOver = true;
         }
     }
 }
