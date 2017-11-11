@@ -3,13 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 public class CharacterController : MonoBehaviour 
 {
+	public float speed = 5f;
 	public static bool gameOver = false;
-	public Rigidbody playerRigidbody;
-	public float speed;
+	Vector3 movement;
+	Rigidbody playerRigidbody;
 	public GameObject shot;
 	public Transform shotSpawn;
 	public float fireRate;
 	private float nextFire;
+
+	void Awake ()
+	{
+		playerRigidbody = GetComponent<Rigidbody> ();
+	}
 
 	void Update ()
 	{
@@ -24,14 +30,13 @@ public class CharacterController : MonoBehaviour
 	{
 		float moveHorizontal = Input.GetAxisRaw ("Horizontal");
 		float moveVertical = Input.GetAxisRaw ("Vertical");
+	}
 
-		Quaternion newRotation = Quaternion.LookRotation (Input.mousePosition);
-		playerRigidbody.MoveRotation (newRotation);
-
-		Vector3 movement = new Vector3 (moveHorizontal, 0.0f, moveVertical);
+	void Move (float moveHorizontal, float moveVertical)
+	{
+		movement.Set (moveHorizontal, 0.0f, moveVertical);
 		//Makes it so moving diagonally doesn't give you a speed boost.
-		movement = movement.normalized;
-		//Makes the movement dependant on the speed set in the inspector. 
-		GetComponent<Rigidbody>().velocity = movement * speed;
+		movement = movement.normalized * speed * Time.deltaTime;
+		playerRigidbody.MovePosition (transform.position + movement);		
 	}
 }

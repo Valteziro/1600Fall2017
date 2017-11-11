@@ -10,30 +10,30 @@ public class UIScript : MonoBehaviour
     public GameObject gameOverUI;
     public float powerLevel = 0.1f;
     public float amountToAdd = 0.01f;   
-	public PowerUpType powerUp; 
+	public PowerUpType Healthkit; 
 
     public enum PowerUpType
 	
     {
-        PowerUp,
-        PowerDown
+        Healthkit,
+        EnemyAttack
     }
 
     void OnTriggerEnter(Collider other)
     {
-        switch (powerUp)
+        switch (Healthkit)
         {
-            case PowerUpType.PowerUp:
-                StartCoroutine(PowerUpBar());
+            case PowerUpType.Healthkit:
+                StartCoroutine(HealthKitBar());
                 break;
 
-            case PowerUpType.PowerDown:
-                StartCoroutine(PowerDownBar());
+            case PowerUpType.EnemyAttack:
+                StartCoroutine(EnemyAttackBar());
                 break;
         }      
         
     }
-    IEnumerator PowerUpBar()
+    IEnumerator HealthKitBar()
     {
         float tempAmount = bar.fillAmount + powerLevel;
         if (tempAmount > 1)
@@ -47,7 +47,7 @@ public class UIScript : MonoBehaviour
             yield return new WaitForSeconds(amountToAdd);
         }
     }
-    IEnumerator PowerDownBar()
+    IEnumerator EnemyAttackBar()
     {
 
         float tempAmount = bar.fillAmount - powerLevel;
