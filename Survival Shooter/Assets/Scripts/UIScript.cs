@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class UIScript : MonoBehaviour
 {
+    public static bool gameOver = false;
     public Image bar;
     public GameObject gameOverUI;
     public float powerLevel = 0.1f;
@@ -59,13 +60,12 @@ public class UIScript : MonoBehaviour
         {
             bar.fillAmount -= amountToAdd;
             yield return new WaitForSeconds(amountToAdd);
-
         }
 
         if (bar.fillAmount == 0)
         {
             gameOverUI.SetActive(true);
-            //CharacterController.gameOver = false;
+            CharacterController.gameOver = false;
         }
     }
 }
