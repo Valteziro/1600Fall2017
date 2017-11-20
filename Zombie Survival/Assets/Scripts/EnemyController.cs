@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class EnemyController : MonoBehaviour 
 {
+    public static bool gameOver = false;
     public NavMeshAgent agent;
     public Transform player;
 
@@ -14,8 +15,11 @@ public class EnemyController : MonoBehaviour
         player = GameObject.Find ("Player").transform;
         agent = GetComponent <NavMeshAgent> ();
     }
-	void Update ()
+	void FixedUpdate ()
 	{
-        agent.destination = player.position;
+        if(!gameOver)
+        {
+            agent.destination = player.position;
+        }
 	}
 }

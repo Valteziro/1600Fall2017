@@ -12,18 +12,11 @@ public class UIScript : MonoBehaviour
     public float amountToAdd = 0.01f;   
 	public PowerUpType DamageOrHeal; 
 
-    void Awake ()
-    {
-        GameObject gameOverUI = gameOverUI.Find(gameOverUI).GetComponent<Image>();
-    }
-
-    public enum PowerUpType
-	
+    public enum PowerUpType	
     {
         Healthkit,
         EnemyAttack
     }
-
     void OnTriggerEnter(Collider other)
     {
         switch (DamageOrHeal)
@@ -35,8 +28,7 @@ public class UIScript : MonoBehaviour
             case PowerUpType.EnemyAttack:
                 StartCoroutine(EnemyAttackBar());
                 break;
-        }      
-        
+        }        
     }
     IEnumerator HealthKitBar()
     {
@@ -54,7 +46,6 @@ public class UIScript : MonoBehaviour
     }
     IEnumerator EnemyAttackBar()
     {
-
         float tempAmount = bar.fillAmount - powerLevel;
         if (tempAmount < 0)
         {
@@ -70,7 +61,7 @@ public class UIScript : MonoBehaviour
         if (bar.fillAmount == 0)
         {
             gameOverUI.SetActive(true);
-            CharacterController.gameOver = false;
+            CharacterController.gameOver = true;
         }
     }
 }
