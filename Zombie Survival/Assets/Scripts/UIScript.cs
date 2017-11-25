@@ -11,7 +11,6 @@ public class UIScript : MonoBehaviour
     public float powerLevel = 0.1f;
     public float amountToAdd = 0.01f;   
 	public PowerUpType DamageOrHeal; 
-
     public enum PowerUpType	
     {
         Healthkit,
@@ -61,7 +60,7 @@ public class UIScript : MonoBehaviour
         if (bar.fillAmount == 0)
         {
             gameOverUI.SetActive(true);
-            CharacterController.gameOver = true;
+            PlayerController.gameOver = true;
         }
     }
 }
