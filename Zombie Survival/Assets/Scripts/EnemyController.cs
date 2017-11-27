@@ -26,9 +26,9 @@ public class EnemyController : MonoBehaviour
             agent.destination = player.position;
         }
         //(DOES NOT WORK.) If it is a game over, enemy stands still. 
-        if(gameOver)
+       void OnTriggerExit ()
         {
-            agent.destination = player.position;
+            EnemyNavMeshAgent.myTarget = this.gameObject;
         }
 	}
 }
