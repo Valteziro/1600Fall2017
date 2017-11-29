@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class EnemyController : MonoBehaviour 
 {
-    public static bool gameOver = false;
     public NavMeshAgent agent;
     public Transform player;
     public Transform Zombie;
@@ -18,17 +17,17 @@ public class EnemyController : MonoBehaviour
         //Locates the NavMesh.
         agent = GetComponent <NavMeshAgent> ();
     }
-	void FixedUpdate ()
+	void Update ()
 	{
         //If it isn't a game over, the enemy tracks and moves towards the players location.
-        if(!gameOver)
+        if(!PlayerController.gameOver)
         {
             agent.destination = player.position;
         }
-        //(DOES NOT WORK.) If it is a game over, enemy stands still. 
-        if(gameOver)
+        //If it is a game over, enemy stands still. 
+        if(PlayerController.gameOver)
         {
-            agent.destination = player.position;
+            agent.destination = transform.position;
         }
 	}
 }

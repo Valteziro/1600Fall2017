@@ -20,6 +20,10 @@ public class PlayerController : MonoBehaviour {
             movement.x = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
             movement.z = Input.GetAxis("Vertical") * speed * Time.deltaTime;
         }
+        else
+        {
+            player.position = 
+        }
         //attaches this script to the characterController within Unity.
         characterController.Move(movement);
     }
