@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour {
         }
         else
         {
-            player.position = 
+            gameObject.SetActive(false);
         }
         //attaches this script to the characterController within Unity.
         characterController.Move(movement);
