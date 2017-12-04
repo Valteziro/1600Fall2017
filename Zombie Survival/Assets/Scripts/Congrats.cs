@@ -6,13 +6,20 @@ using UnityEngine.UI;
 public class Congrats : MonoBehaviour
 {
     public Text goodJob;
-	
-	void OnTriggerEnter ()
+    string[] Grats = new string[3];
+
+    private void Start()
     {
-        string[] Grats = { "You can do it!","Good job!","Keep going!" };
+        Grats[0] = "You can do it!";
+        Grats[1] = "Good job!";
+        Grats[2] = "Keep going!";
+    }
+
+    void OnTriggerEnter ()
+    {
         foreach (string gj in Grats)
         {
-            goodJob.text = (gj);
+            print(Grats);
         }
 	}
 }
